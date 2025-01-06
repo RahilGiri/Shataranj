@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shataranj Bhai</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.2/chess.js"></script>
+</head>
+<body>
+    <div class="menu-container">
+        <div class="menu-button" onclick="toggleMenu()">
+            <span>Games Menu</span>
+            <i class="arrow">▼</i>
+        </div>
+        <div class="games-menu">
+            <div class="game-list">
+                <a href="https://www.battlegroundsmobileindia.com" target="_blank" class="game-item"><img src="images/download (1).jpeg" alt="BGMI"><span>BGMI</span></a>
+                <a href="https://ff.garena.com" target="_blank" class="game-item"><img src="images/freefire.jpeg" alt="Free Fire"><span>Free Fire</span></a>
+                <a href="https://www.minecraft.net" target="_blank" class="game-item"><img src="images/minecraft.jpeg" alt="Minecraft"><span>Minecraft</span></a>
+                <a href="https://pokemongolive.com" target="_blank" class="game-item"><img src="images/pokemon.jpeg" alt="Pokemon Go"><span>Pokemon Go</span></a>
+                <a href="https://www.kiloo.com/subway-surfers" target="_blank" class="game-item"><img src="images/sufway.jpeg" alt="Subway Surfers"><span>Subway Surfers</span></a>
+                <a href="https://www.king.com/game/candycrush" target="_blank" class="game-item"><img src="images/candy.jpeg" alt="Candy Crush"><span>Candy Crush</span></a>
+                <a href="https://outfit7.com/apps/talking-tom" target="_blank" class="game-item"><img src="images/download.jpeg" alt="Talking Tom"><span>Talking Tom</span></a>
+            </div>
+        </div>
+    </div>
+    <div class="game-container">
+        <h1>Shataranj Bhai</h1>
+        <div class="status">
+            <span id="player">White's Turn</span>
+            <span id="message"></span>
+        </div>
+        <div id="board"></div>
+        <div class="game-controls">
+            <button id="undo" class="control-button">↩ Undo Move</button>
+            <button id="restart" class="control-button">New Game</button>
+        </div>
+    </div>
+    <div class="motivation-panel">
+        <div class="quote-container">
+            <div class="quote-text">Loading wisdom...</div>
+            <div class="quote-author"></div>
+        </div>
+    </div>
+    <script>
+        const quotes = [
+            ["Every pawn is a potential queen.", "James Mason"],
+            ["Life is like chess, you must think before you move.", "Chess Proverb"],
+            ["Even a pawn can change the game.", "Unknown"],
+            ["In chess, as in life, the best move is always the next one.", "Chess Wisdom"],
+            ["Success is not about the destination, it's about the journey.", "Anonymous"],
+            ["Your mind is your weapon, keep it sharp.", "Chess Master"],
+            ["Patience is not just waiting, it's calculating your next move.", "Chess Philosophy"],
+            ["Every master was once a beginner.", "Unknown"],
+            ["The only way to get smarter is by playing a smarter opponent.", "Chess Wisdom"],
+            ["Don't play the move, play the board.", "Chess Strategy"],
+            ["Victory belongs to the most persevering.", "Napoleon Bonaparte"],
+            ["The journey of a thousand miles begins with a single step.", "Lao Tzu"]
+        ];
+
+        let quoteIndex = 0;
+        const quoteText = document.querySelector('.quote-text');
+        const quoteAuthor = document.querySelector('.quote-author');
+
+        function toggleMenu() {
+            document.querySelector('.menu-container').classList.toggle('show');
+            document.querySelector('.arrow').classList.toggle('up');
+        }
+
+        document.addEventListener('click', e => {
+            if (!document.querySelector('.menu-container').contains(e.target)) {
+                document.querySelector('.menu-container').classList.remove('show');
+                document.querySelector('.arrow').classList.remove('up');
+            }
+        });
+
+        function updateQuote() {
+            [quoteText.textContent, quoteAuthor.textContent] = [quotes[quoteIndex][0], "- " + quotes[quoteIndex][1]];
+            quoteIndex = (quoteIndex + 1) % quotes.length;
+        }
+
+        updateQuote();
+        setInterval(updateQuote, 5000);
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
