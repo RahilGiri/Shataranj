@@ -2,7 +2,8 @@ Chess Game
 
 Overview
 
-![Uploading Screenshot 2025-02-13 at 10.49.48 PM.png…]()
+<img width="1665" alt="Screenshot 2025-02-13 at 10 49 48 PM" src="https://github.com/user-attachments/assets/8e8f40ff-ad1f-4e0f-938f-ae42c3e9003e" />
+
 
 
 This is a classic Chess Game with a player vs player mode, where two players can play on the same device. The game offers several interactive features, including the ability to undo moves, start a new game, and access a game menu with various options. Additionally, motivational thoughts will appear during gameplay, encouraging players and adding to the experience.
